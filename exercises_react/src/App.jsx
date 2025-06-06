@@ -8,10 +8,10 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
+      <Navigation />
       <header>
         <h1>Exercise Tracker</h1>
         <p>Track your workouts</p>
-        <Navigation />
       </header>
       <Routes>
         <Route path="/" element={<HomePage />} />
