@@ -3,12 +3,6 @@
         - Controller must not directly call any Mongoose code.
           - May call functions from model code.
     2.  Endpoint Requirements:
-        - Params:
-          1. name: "The name of the exercise"
-          2. reps: "The number times exercise was performed. Greater than Zero
-          3. weight: "The weight of weights used for exervcise.
-          4. unit: "The unit of measurement of weight. Only 'kgs' and 'lbs'.
-          5. \_id: "Unique ID. Assigned by MongoDB when doc is created"
         1. Create POST /exercises "Create Exercise"
            - Request:
              - Body: A JSON Object
