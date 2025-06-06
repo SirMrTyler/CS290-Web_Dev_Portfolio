@@ -2,16 +2,21 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
+// Displays all exercises in a table format with edit and delete "buttons"
+
 function HomePage() {
+  // Local state holds all retrieved exercises
   const [exercises, setExercises] = useState([]);
   const navigate = useNavigate();
 
+  // Fetch exercises once when component mounts
   useEffect(() => {
     fetch('/exercises')
       .then(res => res.json())
       .then(setExercises);
   }, []);
 
+  // Delete an exercise then remove it from local state
   const deleteExercise = async (id) => {
     const res = await fetch(`/exercises/${id}`, { method: 'DELETE' });
     if (res.status === 204) {
@@ -19,6 +24,7 @@ function HomePage() {
     }
   };
 
+  // Render the exercise table
   return (
     <section>
       <table>

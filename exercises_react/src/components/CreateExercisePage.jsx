@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// Form for creating a new exercise document (I would call it a table personally, relational database brain "don't like")
+
 function CreateExercisePage() {
   const navigate = useNavigate();
+  // Controlled form data for new exercise
   const [exercise, setExercise] = useState({
     name: '', reps: '', weight: '', unit: 'kgs', date: ''
   });
 
+  // Update state when form fields change
   const handleChange = e => setExercise({ ...exercise, [e.target.name]: e.target.value });
 
+  // Send POST request and redirect to home page
   const createExercise = async () => {
     const res = await fetch('/exercises', {
       method: 'POST',
@@ -27,6 +32,7 @@ function CreateExercisePage() {
     navigate('/');
   };
 
+  // Render the exercise creation form
   return (
     <section>
       <h2>Create Exercise</h2>

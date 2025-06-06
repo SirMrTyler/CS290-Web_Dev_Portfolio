@@ -1,13 +1,18 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
+// Form for editing an existing exercise
+
 function EditExercisePage() {
   const { state } = useLocation();
   const navigate = useNavigate();
+  // Pre-populate form fields using exercise from router state
   const [exercise, setExercise] = useState(state);
 
+  // Update local state when form fields change
   const handleChange = e => setExercise({ ...exercise, [e.target.name]: e.target.value });
 
+  // Send PUT request to update exercise and redirect to home page
   const updateExercise = async () => {
     const res = await fetch(`/exercises/${exercise._id}`, {
       method: 'PUT',
@@ -26,6 +31,8 @@ function EditExercisePage() {
     navigate('/');
   };
 
+  // Render the exercise edit form
+  // Note: The form is similar to the create exercise form, but uses existing data from _id that's passed via state
   return (
     <section>
       <h2>Edit Exercise</h2>

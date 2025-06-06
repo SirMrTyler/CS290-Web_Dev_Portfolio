@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 
+// Simple navigation bar to be displayed on all pages
+
 function Navigation() {
+  // Render two links for navigating between home and create exercise pages
   return (
     <div className='nav-container'>
       <nav className='navbar'>
