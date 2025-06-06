@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation.jsx';
+import HomePage from './components/HomePage.jsx';
+import CreateExercisePage from './components/CreateExercisePage.jsx';
+import EditExercisePage from './components/EditExercisePage.jsx';
+import './App.css';
 
 function App() {
   return (

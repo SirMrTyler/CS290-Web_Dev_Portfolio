@@ -38,13 +38,13 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #00258b;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: #f1fffa;
+  color: #001652;
   margin: 0;
   padding: 2rem;
 }
@@ -55,7 +55,7 @@ table {
 }
 
 th, td {
-  border: 1px solid #ccc;
+  border: 1px solid #7a7a7a;
   padding: 0.5rem;
 }
 
